@@ -19,7 +19,8 @@ Calcular la nota media indicando DNI y asignatura -->
     <p><label>Grupo: <input type="text" name="grupo"/></label></p>
     <p><label>Fecha y Hora (YYYY-MM-DDThh:mm): <input type="datetime-local" name="fecha_hora"/></label></p>
     <p><label>Asignatura: <input type="text" name="asignatura"/></label></p>
-    <p><label>Nota: <input type="number" name="nota"/></label></p>
+    <p><label>Nota:</label> <input type="text" name="nota" /></p>
+    <!-- <p><label>Nota: <input type="number" name="nota" step="0.01" min="0" max="10"/></label></p> -->
     <div>
       <button type="submit" name="nueva">Nueva</button>
       <button type="submit" name="modificar">Modificar</button>
@@ -28,6 +29,5 @@ Calcular la nota media indicando DNI y asignatura -->
     </div>
   </form>
 </div>
-<h3><a href="http://localhost:63342/PHP_V1/index.php">Volver al índice</a></h3>
 </body>
 </html>

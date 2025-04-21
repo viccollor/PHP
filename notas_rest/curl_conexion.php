@@ -17,18 +17,10 @@ function curl_conexion($url, $metodo, $params = null)
     if ($params != null) {
         curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));
     }
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array("Cache-Control: no-cache"));
 
     // Ejecuta la llamada al servidor y obtiene la respuesta
     $response = curl_exec($curl);
-    $err = curl_error($curl);
-
     curl_close($curl);
-
-    // Si hubo error en la conexión, se retorna un mensaje JSON con el error
-    if ($err) {
-        $response = json_encode("cURL Error #:" . $err);
-    }
 
     return $response;
 }
