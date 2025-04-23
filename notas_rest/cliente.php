@@ -25,9 +25,9 @@ if (isset($_REQUEST["nueva"])) {
       ];
 
       $url = _URL_SERVIDOR_ . "servidor.php";
-      $response = curl_conexion($url, "POST", $datos);
-      echo "Respuesta cruda: " . $response . "<br>"; //*** */
-      $resultado = json_decode($response, true);
+      $respuesta = curl_conexion($url, "POST", $datos);
+      print_r($respuesta); // No muestra nada
+      $resultado = json_decode($respuesta, true);
 
     } else {
       echo "Todos los campos son obligatorios y la nota debe ser un número.";
@@ -42,11 +42,11 @@ if (isset($_REQUEST["media"])) {
     if ($dni && $asignatura) {
       $url = _URL_SERVIDOR_ . "servidor.php?dni=" . $dni . "&asignatura=" . $asignatura;
 
-      $response = curl_conexion($url, "GET");
-      $resultado = json_decode($response, true);
-      print_r($resultado);
+      $respuesta = curl_conexion($url, "GET");
+      $resultado = json_decode($respuesta, true);
+
       if (is_array($resultado) && isset($resultado['media'])) {
-        echo "La media de las notas es: " . $resultado['media'];
+        echo "La media de las notas es: " . round($resultado['media'], 1);
       } else {
         echo "Error al visualizar las notas. <br>";
       }

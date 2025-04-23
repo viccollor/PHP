@@ -49,5 +49,6 @@ switch ($metodo) {
               VALUES ('$dni', '$nombre', '$grupo', '$fecha_hora', '$asignatura', '$nota')";
 
     $con_bd = @conexion_bd(SERVIDOR, USER, PASSWD, BASE_DATOS, $sql);
+    echo json_encode($con_bd, true);
     break;
 }
