@@ -24,6 +24,7 @@ Calcular la nota media indicando DNI y asignatura -->
     <div>
       <button type="submit" name="nueva">Nueva</button>
       <button type="submit" name="modificar">Modificar</button>
+      <button type="submit" name="eliminar">Eliminar</button>
       <button type="submit" name="media">Nota Media</button>
       <button type="reset" name="cancelar">Cancelar</button>
     </div>
